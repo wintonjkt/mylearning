@@ -1,6 +1,14 @@
 # mylearning
   
   
+  
+  
+**Run VSCode as Root**  
+  
+1. Create a working directory 
+2. Run from terminal: sudo code --user-data-dir your_working_dir_path
+  
+  
 
 **Set UBUNTU Desktop app to always run as root**  
   
