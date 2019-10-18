@@ -1,6 +1,8 @@
 # mylearning
+  
+  
 
-**If you want the app to always run as root**  
+**Set UBUNTU Desktop app to always run as root**  
   
 Pin the application to the launcher as normal.  
   
