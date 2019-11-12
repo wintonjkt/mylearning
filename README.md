@@ -45,3 +45,6 @@ oc create secret generic registry-certificates \
     --from-file=/etc/secrets/registry.crt \  
     --from-file=/etc/secrets/registry.key  
       
+oc secrets link registry registry-certificates  
+oc secrets link default  registry-certificates  
+  
