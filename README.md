@@ -29,3 +29,14 @@ to
   
 Exec=gksudo -k -u root APP_COMMAND  
 Save  
+
+**Configure ocp registry**  
+  
+oc adm ca create-server-cert \  
+    --signer-cert=/etc/origin/master/ca.crt \  
+    --signer-key=/etc/origin/master/ca.key \  
+    --signer-serial=/etc/origin/master/ca.serial.txt \  
+    --hostnames='docker-registry.default.svc.cluster.local,docker-registry.default.svc,161.202.177.33,docker-registry-default.161.202.177.33.nip.io' \  
+    --cert=/etc/secrets/registry.crt \  
+      
+    --key=/etc/secrets/registry.key
