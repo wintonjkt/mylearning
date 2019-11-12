@@ -38,5 +38,4 @@ oc adm ca create-server-cert \
     --signer-serial=/etc/origin/master/ca.serial.txt \  
     --hostnames='docker-registry.default.svc.cluster.local,docker-registry.default.svc,161.202.177.33,docker-registry-default.161.202.177.33.nip.io' \  
     --cert=/etc/secrets/registry.crt \  
-      
-    --key=/etc/secrets/registry.key
+    --key=/etc/secrets/registry.key  
