@@ -32,6 +32,8 @@ Save
 
 **Configure ocp registry**  
   
+https://docs.openshift.com/container-platform/3.11/install_config/registry/securing_and_exposing_registry.html  
+
 oc adm ca create-server-cert \  
     --signer-cert=/etc/origin/master/ca.crt \  
     --signer-key=/etc/origin/master/ca.key \  
@@ -48,3 +50,6 @@ oc create secret generic registry-certificates \
 oc secrets link registry registry-certificates  
 oc secrets link default  registry-certificates  
   
+After exposing the registry, update your /etc/sysconfig/docker file by adding the port number to the OPTIONS entry. For example:  
+  
+OPTIONS='--selinux-enabled --insecure-registry=172.30.0.0/16 --insecure-registry registry.example.com:80'  
