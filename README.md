@@ -61,3 +61,8 @@ fgrep -RIl 127.0.0.1:8443 openshift.local.clusterup/ | xargs sed -i 's/127.0.0.1
 oc edit cm webconsole-config -n openshift-web-console -o yaml  
   
 oc cluster up --public-hostname=x.x.x.x  
+  
+**Login as system:admin**  
+  
+oc login -u system:admin -n default --config=/root/ocp/openshift.local.clusterup/openshift-controller-manager/admin.kubeconfig   
+  
