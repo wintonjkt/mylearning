@@ -56,4 +56,8 @@ OPTIONS='--selinux-enabled --insecure-registry=172.30.0.0/16 --insecure-registry
   
 **oc cluster up with public IP**  
   
-fgrep -RIl 127.0.0.1:8443 openshift.local.clusterup/ | xargs sed -i 's/127.0.0.1:8443/$PUBLIC_IP:8443/g'
+fgrep -RIl 127.0.0.1:8443 openshift.local.clusterup/ | xargs sed -i 's/127.0.0.1:8443/$PUBLIC_IP:8443/g'  
+  
+oc edit cm webconsole-config -n openshift-web-console -o yaml  
+  
+oc cluster up --public-hostname=x.x.x.x  
