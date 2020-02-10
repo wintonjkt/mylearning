@@ -53,3 +53,7 @@ oc secrets link default  registry-certificates
 After exposing the registry, update your /etc/sysconfig/docker file by adding the port number to the OPTIONS entry. For example:  
   
 OPTIONS='--selinux-enabled --insecure-registry=172.30.0.0/16 --insecure-registry registry.example.com:80'  
+  
+**oc cluster up with public IP**  
+  
+fgrep -RIl 127.0.0.1:8443 openshift.local.clusterup/ | xargs sed -i 's/127.0.0.1:8443/$PUBLIC_IP:8443/g'
